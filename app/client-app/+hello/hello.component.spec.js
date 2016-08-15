@@ -21,8 +21,8 @@ describe('Hello', () => {
     tcb.createAsync(Hello)
       .then((fixture) => {
         fixture.detectChanges();
-
-        expect(fixture.debugElement.nativeElement).toHaveText('Hello, Angular2!');
+        var expectation = fixture.debugElement.nativeElement.textContent.trim();
+        expect(expectation).toHaveText('Hello, Angular2!');
       });
   })));
 });
